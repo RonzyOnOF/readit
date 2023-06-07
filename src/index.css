@@ -37,4 +37,9 @@ body {
   height: auto;
 }
 
+.subreddit-container img {
+  width: 100px;
+  height: auto;
+}
+
 
