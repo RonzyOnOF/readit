@@ -7,7 +7,7 @@ export const Subreddits = () => {
     return (
         <div className='sidebar-container'>
             {subreddits.map(subreddit => {return(
-                <Subreddit image={subreddit.image} topic={subreddit.topic}/>
+                <Subreddit image={subreddit.image} topic={subreddit.topic} key={subreddit.id}/>
             )})}
         </div>
     )
