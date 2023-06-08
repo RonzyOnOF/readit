@@ -1,9 +1,22 @@
-import { createSlice } from '@reduxjs/toolkit';
-import reactLog from '../../../public/images/React-icon.svg.png';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import reactLog from '../../images/React-icon.svg.png';
 import { v4 } from 'uuid';
 
 
 const subredditsArray = [{topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}]
+
+export const loadSubreddit = createAsyncThunk(
+    'subreddits/getSubreddit',
+    async() => {
+        const data = await fetch('https://www.reddit.com/r/JDM.json');
+        const json = await data.json();
+        const { thumbnail, title, ups } = json.data.children[0].data;
+        console.log(thumbnail);
+        console.log(title);
+        console.log(ups);
+        console.log(json.data.children[0].data);
+    }
+)
 
 const subredditsSlice = createSlice({
     name: 'subreddits',

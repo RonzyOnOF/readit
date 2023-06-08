@@ -1,0 +1,62 @@
+
+.toggleButtonLight {
+    color: black;
+    background-color: white;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    position: relative;
+    height: 30px;
+    width: 65px;
+}
+
+.toggleButtonDark {
+    color: white;
+    background-color: black;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    position: relative;
+    height: 30px;
+    width: 65px;
+}
+
+.circleLeft {
+    height: 25px;
+    width: 25px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    cursor: pointer;
+}
+
+.circleRight {
+    height: 25px;
+    width: 25px;
+    background-color: #4e4e4e;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+
+}
+
+.moon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+}
+
+.sun {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+}
+
