@@ -3,18 +3,25 @@ import reactLog from '../../images/React-icon.svg.png';
 import { v4 } from 'uuid';
 
 
-const subredditsArray = [{topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}]
+const subredditsArray = [{topic: 'popular', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}, {topic: 'pics', image: reactLog, id: v4()}]
 
 export const loadSubreddit = createAsyncThunk(
     'subreddits/getSubreddit',
     async() => {
-        const data = await fetch('https://www.reddit.com/r/JDM.json');
+        // const data = await fetch('https://www.reddit.com/r/JDM.json');
+        const data = await fetch('https://www.reddit.com/r/popular.json');
         const json = await data.json();
-        const { thumbnail, title, ups } = json.data.children[0].data;
+        const { thumbnail, title, ups } = json.data.children[2].data;
+        const sub = {
+            thumbnail: thumbnail,
+            title: title,
+            upvotes: ups
+        }
         console.log(thumbnail);
         console.log(title);
         console.log(ups);
-        console.log(json.data.children[0].data);
+        console.log(json.data.children[3].data);
+        return sub;
     }
 )
 
@@ -22,7 +29,7 @@ const subredditsSlice = createSlice({
     name: 'subreddits',
     initialState: {
         subreddits: subredditsArray,
-        currentSubreddit: 'r/home'
+        currentSubreddit: 'r/JDM'
     },
     reducers: {
         changeCurrentSubreddit: (state, action) => {

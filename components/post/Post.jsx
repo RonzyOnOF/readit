@@ -1,9 +1,12 @@
-
+import nsx from '../../src/images/nsx.jpg';
 
 export const Post = () => {
     return (
         <>
-            <h3>Some post</h3>
+            <div className='post'>
+                <img src={nsx} />
+                <p>The one thing I really wish my japanese car had been designed with</p>
+            </div>
         </>
     )
 }
