@@ -102,5 +102,21 @@ body {
 }
 
 
+@media screen and (max-width: 800px) {
+  .home-container {
+    width: 70%;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .home-container {
+    width: 90%;
+  }
+
+}
+
+
 
 
