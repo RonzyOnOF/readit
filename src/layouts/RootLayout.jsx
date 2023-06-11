@@ -11,9 +11,11 @@ export const RootLayout = () => {
     const currentMode = useSelector(selecttoggleMode);
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(loadSubreddit());
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(loadSubreddit());
+    // }, [dispatch])
+
+
 
     return (
         <>
