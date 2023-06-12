@@ -6,23 +6,16 @@ import peep from '../../images/peepingg.png';
 import gallery from '../../images/gallery.png';
 
 
-const subredditsArray = [{topic: 'JDM', image: jdmlogo, id: v4()}, {topic: 'Anime', image: peep, id: v4()}, {topic: 'Gym', image: reactLog, id: v4()}, {topic: 'pics', image: gallery, id: v4()}, {topic: 'react', image: reactLog, id: v4()}]
+const subredditsArray = [{topic: 'onlyJDM', image: jdmlogo, id: v4()}, {topic: 'Anime', image: peep, id: v4()}, {topic: 'Gym', image: reactLog, id: v4()}, {topic: 'pics', image: gallery, id: v4()}, {topic: 'react', image: reactLog, id: v4()}]
 
 
 //middlethunk to fetch subreddit that returns array of posts
 export const loadSubreddit = createAsyncThunk(
     'subreddits/getSubreddit',
     async() => {
-        const data = await fetch('https://www.reddit.com/r/JDM.json');
+        const data = await fetch('https://www.reddit.com/r/onlyJDM.json');
         const json = await data.json();
-        // const sub = {
-        //     thumbnail: thumbnail,
-        //     title: title,
-        //     upvotes: ups
-        // }
-        // console.log(json.data.children[3].data);
         console.log(json.data.children);
-        console.log('fetch request successful');
         const arrayOfPosts = json.data.children;
         return arrayOfPosts;
     }
@@ -33,7 +26,7 @@ const subredditsSlice = createSlice({
     name: 'subreddits',
     initialState: {
         subreddits: subredditsArray,
-        currentSubreddit: 'r/JDM',
+        currentSubreddit: 'r/onlyJDM',
         currentSubredditFeed: {},
         isLoading: true,
         failedToLoad: false
@@ -56,8 +49,8 @@ const subredditsSlice = createSlice({
                 state.currentSubredditFeed = action.payload;
             })
             .addCase(loadSubreddit.rejected, (state) => {
-                state.subreddits.isLoading = false;
-                state.subreddits.failedToLoad = true;
+                state.isLoading = false;
+                state.failedToLoad = true;
             })
     }
 })

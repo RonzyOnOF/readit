@@ -6,9 +6,9 @@
 .subredditContainer {
     width: 90%;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 10px 0px;
-    margin: 10px auto;
+    margin: 15px auto;
     background-color: rgb(161, 199, 255);
     color: rgb(38, 4, 43);
     cursor: pointer;

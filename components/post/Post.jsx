@@ -1,11 +1,34 @@
-import nsx from '../../src/images/nsx.jpg';
 
+export const Post = ({ image, description, type, post}) => {
 
-export const Post = ({ image, description}) => {
+    let isVideo;
+    let video;
+
+    switch(type) {
+        case false:
+            isVideo = false;
+            break;
+        case true:
+            video = post.data.media.reddit_video.fallback_url; 
+            isVideo = true;
+            break;
+        default:
+            break;
+
+    }
+
+    if (post.data.thumbnail === 'self') {
+        return (
+            <div className='post'>
+                <p>{description}</p>
+            </div>
+        )
+    }
+
     return (
         <>
             <div className='post'>
-                <img src={image} />
+                {isVideo ? <video controls><source src={video} type="video/mp4" /></video> : <img src={image}/>}
                 <p>{description}</p>
             </div>
         </>

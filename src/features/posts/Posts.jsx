@@ -11,12 +11,14 @@ export const Posts = () => {
     // console.log(feed);
     // console.log('loading :' + isLoading);
 
+    
+
 
 
     return (
 
         <>
-            {isLoading ? <Loading /> : feed.map(post => {return <Post image={post.data.thumbnail} description={post.data.title} />})}
+            {isLoading ? <Loading /> : feed.map(post => {return <Post post={post} type={post.data.is_video} image={post.data.url} description={post.data.title} key={post.data.id} />})}
         </>
     )
 }
