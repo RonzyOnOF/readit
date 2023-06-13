@@ -1,5 +1,8 @@
+import arrow from '../../src/images/upvote2.png';
+import downArrow from '../../src/images/downvote.png';
 
-export const Post = ({ image, description, type, post, gallery}) => {
+
+export const Post = ({ image, description, type, post, gallery, votes }) => {
 
     let isVideo;
     let video;
@@ -32,6 +35,12 @@ export const Post = ({ image, description, type, post, gallery}) => {
         return (
             <div className='post'>
                 <p>{description}</p>
+                <p>{post.data.selftext}</p>
+                <div className='upvotes'>
+                    <img src={arrow} id='upvote' />
+                    <p>{votes}</p>
+                    <img src={downArrow} id='downvote' />
+                </div>
             </div>
         )
     }
@@ -41,6 +50,11 @@ export const Post = ({ image, description, type, post, gallery}) => {
             <div className='post'>
                 {isVideo ? <video controls><source src={video} type="video/mp4" /></video> : <img src={image}/>}
                 <p>{description}</p>
+                <div className='upvotes'>
+                    <img src={arrow} id='upvote' />
+                    <p>{votes}</p>
+                    <img src={downArrow} id='downvote' />
+                </div>
             </div>
         </>
     )

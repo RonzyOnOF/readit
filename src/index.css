@@ -76,6 +76,10 @@ body {
   background-color: rgb(161, 199, 255);
 }
 
+.post p {
+  padding: 6px 8px;
+}
+
 .post img {
   width: 100%;
   height: auto;
@@ -90,10 +94,21 @@ body {
   padding-top: 0px;
 }
 
+#upvote {
+  width: 10%;
+}
+
+#downvote {
+  width: 10%;
+}
+
 /* Subreddit container */
 .sub-container {
   text-align: center;
   width: 100%;
+  top: 20px;
+  height: 800px;
+  position: sticky;
 }
 
 /* Feed container */
