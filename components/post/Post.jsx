@@ -1,9 +1,11 @@
 
-export const Post = ({ image, description, type, post}) => {
+export const Post = ({ image, description, type, post, gallery}) => {
 
     let isVideo;
     let video;
 
+
+    //check if media type is a video or just image
     switch(type) {
         case false:
             isVideo = false;
@@ -17,6 +19,15 @@ export const Post = ({ image, description, type, post}) => {
 
     }
 
+    //check if media contains multiple images to be ignored for now
+    if (gallery) {
+        return (
+            <>
+            </>
+        )
+    }
+
+    //check to see if media contains no image
     if (post.data.thumbnail === 'self') {
         return (
             <div className='post'>

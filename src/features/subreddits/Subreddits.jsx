@@ -1,6 +1,7 @@
 import { Subreddit } from '../../../components/subreddit/Subreddit';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectSubreddits, changeCurrentSubreddit } from '../subreddits/subredditsSlice';
+import { loadSubreddit } from '../subreddits/subredditsSlice';
 import style from './Subreddits.module.css';
 
 export const Subreddits = () => {
@@ -13,15 +14,19 @@ export const Subreddits = () => {
         case 'IMG':
             const text = e.target.nextElementSibling.innerHTML;
             dispatch(changeCurrentSubreddit(`r/${text}`));
+            dispatch(loadSubreddit(text));
             break;
         case 'DIV':
             // console.log(e);
             const newText = e.target.childNodes[1].innerHTML;
             dispatch(changeCurrentSubreddit(`r/${newText}`));
+            dispatch(loadSubreddit(newText));
             break;
         case 'P':
             const updatedText = e.target.innerHTML;
             dispatch(changeCurrentSubreddit(`r/${updatedText}`));
+            dispatch(loadSubreddit(updatedText));
+
             break;
         default:
             break;

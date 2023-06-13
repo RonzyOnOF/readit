@@ -18,7 +18,7 @@ export const Posts = () => {
     return (
 
         <>
-            {isLoading ? <Loading /> : feed.map(post => {return <Post post={post} type={post.data.is_video} image={post.data.url} description={post.data.title} key={post.data.id} />})}
+            {isLoading ? <Loading /> : feed.map(post => {return <Post gallery={post.data.is_gallery} post={post} type={post.data.is_video} image={post.data.url} description={post.data.title} key={post.data.id} />})}
         </>
     )
 }

@@ -10,7 +10,7 @@ export const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-       dispatch(loadSubreddit());
+       dispatch(loadSubreddit('onlyJDM'));
     }, [dispatch])
 
     
