@@ -1,11 +1,15 @@
 import arrow from '../../src/images/upvote2.png';
 import downArrow from '../../src/images/downvote.png';
+import { checkDescriptionLength } from '../../src/utilities/checkDescriptionLength';
+import { LongPost } from './LongPost';
 
 
 export const Post = ({ image, description, type, post, gallery, votes }) => {
 
     let isVideo;
     let video;
+
+    const isLong = checkDescriptionLength(post.data.selftext);
 
 
     //check if media type is a video or just image
@@ -30,6 +34,14 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
         )
     }
 
+    if (isLong) {
+        return (
+            <>
+                <LongPost post={post} votes={votes} description={description}/>
+            </>
+        )
+    }
+
     //check to see if media contains no image
     if (post.data.thumbnail === 'self') {
         return (
@@ -38,12 +50,15 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
                 <p>{post.data.selftext}</p>
                 <div className='upvotes'>
                     <img src={arrow} id='upvote' />
-                    <p>{votes}</p>
+                    <p id='votecount'>{votes}</p>
                     <img src={downArrow} id='downvote' />
                 </div>
             </div>
         )
     }
+
+    //check if post has long description
+
 
     return (
         <>
@@ -52,7 +67,7 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
                 <p>{description}</p>
                 <div className='upvotes'>
                     <img src={arrow} id='upvote' />
-                    <p>{votes}</p>
+                    <p id='votecount'>{votes}</p>
                     <img src={downArrow} id='downvote' />
                 </div>
             </div>
