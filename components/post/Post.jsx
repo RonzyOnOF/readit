@@ -61,6 +61,7 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
                         <p id={style.votecount}>{votes}</p>
                         <img src={downArrow} id={style.downvote} />
                     </div>
+                    <p>{post.data.num_comments}</p>
                     <CommentIcon />
                 </div>
             </div>
@@ -85,7 +86,10 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
                         <p id='votecount'>{votes}</p>
                         <img src={downArrow} id={style.downvote} />
                     </div>
-                    <CommentIcon />
+                    <div className={style.commentContainer}>
+                        <p id={style.commentNumber}>{post.data.num_comments}</p>
+                        <CommentIcon />
+                    </div>
                 </div>
             </div>
         </>

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { Loading } from '../../../components/loading/Loading';
 import { selectSubredditFeed } from '../subreddits/subredditsSlice';
 
+
 export const Posts = () => {
 
     const isLoading = useSelector(selectIsLoading);

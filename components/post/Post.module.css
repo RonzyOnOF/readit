@@ -70,11 +70,22 @@
     cursor: pointer;
 }
 
+#commentNumber {
+    margin-top: 4px;
+}
+
+
 .footerContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
+.commentContainer {
+    display: flex;
+    align-items: center;
+}
+
 
 @media screen and (max-width: 820px) {
     .post p {
@@ -88,6 +99,10 @@
         width: 100%;
         font-size: 11px;
         margin: -10px auto -14px;
+    }
+
+    .footerContainer p {
+        font-size: 1.5vw;
     }
 }
 
