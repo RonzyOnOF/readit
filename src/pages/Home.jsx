@@ -8,9 +8,12 @@ import { Posts } from '../features/posts/Posts';
 export const Home = () => {
     const currentSubreddit = useSelector(selectCurrentSubreddit);
     const dispatch = useDispatch();
+    
+    //converts r/subreddit into subreddit format to fetch data
+    const subredditFormat = currentSubreddit.substring(2, currentSubreddit.length);
 
     useEffect(() => {
-       dispatch(loadSubreddit('onlyJDM'));
+       dispatch(loadSubreddit(subredditFormat));
     }, [dispatch])
 
     

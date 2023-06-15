@@ -8,7 +8,7 @@ import { CommentIcon } from '../comments/CommentIcon';
 import { getCommentsForPosts } from '../../src/utilities/getCommentsForPost';
 
 
-export const Post = ({ image, description, type, post, gallery, votes }) => {
+export const Post = ({ image, description, type, post, gallery, votes, clickPost }) => {
 
     let isVideo;
     let video;
@@ -51,7 +51,7 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
     //check to see if media contains no image
     if (post.data.thumbnail === 'self') {
         return (
-            <div className={style.post}>
+            <div className={style.post} onClick={clickPost}>
                 <p>{description}</p>
                 <p>{post.data.selftext}</p>
                 <p id={style.author}>{'posted by ' + post.data.author}</p>
@@ -61,8 +61,10 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
                         <p id={style.votecount}>{votes}</p>
                         <img src={downArrow} id={style.downvote} />
                     </div>
-                    <p>{post.data.num_comments}</p>
-                    <CommentIcon />
+                    <div className={style.commentContainer}>
+                        <p id={style.commentNumber}>{post.data.num_comments}</p>
+                        <CommentIcon />
+                    </div>
                 </div>
             </div>
         )
@@ -75,10 +77,10 @@ export const Post = ({ image, description, type, post, gallery, votes }) => {
 
     return (
         <>
-            <div className={style.post}>
+            <div className={style.post} onClick={clickPost}>
                 {isVideo ? <video controls><source src={video} type="video/mp4" /></video> : <img src={image}/>}
                 <p>{description}</p>
-                <button onClick={handleClick}>Get comments</button>
+                {/* <button onClick={handleClick}>Get comments</button> */}
                 <p id={style.author}>{'posted by ' + post.data.author}</p>
                 <div className={style.footerContainer}>
                     <div className={style.upvotes}>
