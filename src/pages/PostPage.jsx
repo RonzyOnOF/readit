@@ -3,16 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { Post } from '../../components/post/Post';
 import { useSelector } from 'react-redux';
 import { selectSubredditFeed } from '../features/subreddits/subredditsSlice';
+import { getCommentsForPosts } from '../utilities/getCommentsForPost';
 
 
 export const PostPage = () => {
     const feed = useSelector(selectSubredditFeed);
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log(feed);
     const singlePost = feed.filter(post => post.data.id === id);
-    console.log(singlePost);
+    const comments = getCommentsForPosts(singlePost[0].data.permalink);
     
+
+    //looking for author, body, score
     return (
         <>
           <h1>Post page for {id}</h1>

@@ -19,8 +19,6 @@ export const Posts = () => {
         navigate(`/post/${id}`);
     }
 
-    
-
 
 
     return (

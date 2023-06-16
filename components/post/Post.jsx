@@ -1,21 +1,15 @@
 import arrow from '../../src/images/upvote2.png';
 import downArrow from '../../src/images/downvote.png';
-import { checkDescriptionLength } from '../../src/utilities/checkDescriptionLength';
-import { LongPost } from './LongPost';
 import style from './Post.module.css';
 import { CommentIcon } from '../comments/CommentIcon';
+import { useState } from 'react';
 
-import { getCommentsForPosts } from '../../src/utilities/getCommentsForPost';
 
 
 export const Post = ({ image, description, type, gallery, votes, clickPost, thumbnail, post, selftext, author, commentNumber }) => {
 
     let isVideo;
     let videoUrl;
-
-    // const isLong = checkDescriptionLength(post.data.selftext);
-
-
     //check if media type is a video or just image
     switch(type) {
         case false:
@@ -37,8 +31,6 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
             </>
         )
     }
-
-
 
     //check to see if media contains no image
     if (thumbnail === 'self') {
@@ -63,8 +55,10 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
     }
 
     //get comments for post
-    const handleClick = () => {
-        getCommentsForPosts("/r/Animemes/comments/148qblp/for_real_im_confused/");
+    const handleClick = (post) => {
+        const { permalink } = post.data;
+        console.log(permalink)
+        // getCommentsForPosts("/r/Animemes/comments/148qblp/for_real_im_confused/");
     }
 
     return (
