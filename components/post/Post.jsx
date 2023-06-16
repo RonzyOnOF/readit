@@ -8,12 +8,12 @@ import { CommentIcon } from '../comments/CommentIcon';
 import { getCommentsForPosts } from '../../src/utilities/getCommentsForPost';
 
 
-export const Post = ({ image, description, type, post, gallery, votes, clickPost }) => {
+export const Post = ({ image, description, type, gallery, votes, clickPost, thumbnail, post, selftext, author, commentNumber }) => {
 
     let isVideo;
-    let video;
+    let videoUrl;
 
-    const isLong = checkDescriptionLength(post.data.selftext);
+    // const isLong = checkDescriptionLength(post.data.selftext);
 
 
     //check if media type is a video or just image
@@ -22,7 +22,7 @@ export const Post = ({ image, description, type, post, gallery, votes, clickPost
             isVideo = false;
             break;
         case true:
-            video = post.data.media.reddit_video.fallback_url; 
+            videoUrl = post.data.media.reddit_video.fallback_url; 
             isVideo = true;
             break;
         default:
@@ -38,23 +38,15 @@ export const Post = ({ image, description, type, post, gallery, votes, clickPost
         )
     }
 
-    // if (isLong) {
-    //     return (
-    //         <>
-    //             <LongPost post={post} votes={votes} description={description}/>
-    //         </>
-    //     )
-    // }
-
 
 
     //check to see if media contains no image
-    if (post.data.thumbnail === 'self') {
+    if (thumbnail === 'self') {
         return (
             <div className={style.post} onClick={clickPost}>
                 <p>{description}</p>
-                <p>{post.data.selftext}</p>
-                <p id={style.author}>{'posted by ' + post.data.author}</p>
+                <p>{selftext}</p>
+                <p id={style.author}>{'posted by ' + author}</p>
                 <div className={style.footerContainer} >
                     <div className={style.upvotes}>
                         <img src={arrow} id={style.upvote} />
@@ -62,7 +54,7 @@ export const Post = ({ image, description, type, post, gallery, votes, clickPost
                         <img src={downArrow} id={style.downvote} />
                     </div>
                     <div className={style.commentContainer}>
-                        <p id={style.commentNumber}>{post.data.num_comments}</p>
+                        <p id={style.commentNumber}>{commentNumber}</p>
                         <CommentIcon />
                     </div>
                 </div>
@@ -70,7 +62,7 @@ export const Post = ({ image, description, type, post, gallery, votes, clickPost
         )
     }
 
-    //check if post has long description
+    //get comments for post
     const handleClick = () => {
         getCommentsForPosts("/r/Animemes/comments/148qblp/for_real_im_confused/");
     }
@@ -78,10 +70,10 @@ export const Post = ({ image, description, type, post, gallery, votes, clickPost
     return (
         <>
             <div className={style.post} onClick={clickPost}>
-                {isVideo ? <video controls><source src={video} type="video/mp4" /></video> : <img src={image}/>}
+                {isVideo ? <video controls><source src={post.data.media.reddit_video.fallback_url} type="video/mp4" /></video> : <img src={image}/>}
                 <p>{description}</p>
                 {/* <button onClick={handleClick}>Get comments</button> */}
-                <p id={style.author}>{'posted by ' + post.data.author}</p>
+                <p id={style.author}>{'posted by ' + author}</p>
                 <div className={style.footerContainer}>
                     <div className={style.upvotes}>
                         <img src={arrow} id={style.upvote} />
@@ -89,7 +81,7 @@ export const Post = ({ image, description, type, post, gallery, votes, clickPost
                         <img src={downArrow} id={style.downvote} />
                     </div>
                     <div className={style.commentContainer}>
-                        <p id={style.commentNumber}>{post.data.num_comments}</p>
+                        <p id={style.commentNumber}>{commentNumber}</p>
                         <CommentIcon />
                     </div>
                 </div>

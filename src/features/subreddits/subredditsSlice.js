@@ -35,6 +35,7 @@ const subredditsSlice = createSlice({
     },
     reducers: {
         changeCurrentSubreddit: (state, action) => {
+
             state.currentSubreddit = action.payload;
         }
     },
