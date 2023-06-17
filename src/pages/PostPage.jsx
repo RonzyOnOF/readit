@@ -7,9 +7,9 @@ import { getCommentsForPosts } from '../utilities/getCommentsForPost';
 
 
 export const PostPage = () => {
-    const feed = useSelector(selectSubredditFeed);
     const navigate = useNavigate();
     const { id } = useParams();
+    const feed = useSelector(selectSubredditFeed);
     const singlePost = feed.filter(post => post.data.id === id);
     const comments = getCommentsForPosts(singlePost[0].data.permalink);
     
@@ -30,7 +30,8 @@ export const PostPage = () => {
            image={singlePost[0].data.url} 
            description={singlePost[0].data.title} 
            key={singlePost[0].data.id} 
-           votes={singlePost[0].data.ups}/> 
+           votes={singlePost[0].data.ups}
+           isIndividualPost={true}/> 
         </>
 
     )
