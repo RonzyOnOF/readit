@@ -16,7 +16,7 @@ export const loadSubreddit = createAsyncThunk(
     async(cat) => {
         const data = await fetch(`https://www.reddit.com/r/${cat}.json`);
         const json = await data.json();
-        console.log(json.data.children);
+        // console.log(json.data.children);
         const arrayOfPosts = json.data.children;
         return arrayOfPosts;
     }

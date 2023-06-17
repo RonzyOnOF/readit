@@ -2,7 +2,6 @@ import arrow from '../../src/images/upvote2.png';
 import downArrow from '../../src/images/downvote.png';
 import style from './Post.module.css';
 import { CommentIcon } from '../comments/CommentIcon';
-import { useState } from 'react';
 
 
 
@@ -47,7 +46,7 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
                     </div>
                     <div className={style.commentContainer}>
                         <p id={style.commentNumber}>{commentNumber}</p>
-                        <CommentIcon />
+                        <CommentIcon isIndividualPost={isIndividualPost} />
                     </div>
                 </div>
             </div>

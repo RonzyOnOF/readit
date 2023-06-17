@@ -4,6 +4,7 @@ import { Post } from '../../components/post/Post';
 import { useSelector } from 'react-redux';
 import { selectSubredditFeed } from '../features/subreddits/subredditsSlice';
 import { getCommentsForPosts } from '../utilities/getCommentsForPost';
+import style from './PostPage.module.css';
 
 
 export const PostPage = () => {
@@ -17,8 +18,9 @@ export const PostPage = () => {
     //looking for author, body, score
     return (
         <>
-          <h1>Post page for {id}</h1>
-          <button onClick={() => navigate('/')}>go back to posts</button>
+          <div className={style.buttonContainer}>
+            <button id={style.goBack} onClick={() => navigate('/')}>Go back to posts</button>
+          </div>
           <Post
            gallery={singlePost[0].data.is_gallery}
            commentNumber={singlePost[0].data.num_comments}
