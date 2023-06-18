@@ -12,7 +12,7 @@ export const Comments = () => {
     return (
         <>
             <div className='comments-container'>
-                {isLoading ? <Loading /> : comments.map(comment => <Comment body={comment.data.body} key={comment.data.id}/>)}
+                {isLoading ? <Loading /> : comments.map(comment => <Comment author={comment.data.author} body={comment.data.body} score={comment.data.score} key={comment.data.id}/>)}
             </div>
         </>
     )

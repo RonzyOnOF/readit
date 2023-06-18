@@ -17,7 +17,8 @@ export const PostPage = () => {
     const singlePost = feed.filter(post => post.data.id === id);
     
     useEffect(() => {
-      dispatch(fetchCommentsForPost(singlePost[0].data.permalink))
+      dispatch(fetchCommentsForPost(singlePost[0].data.permalink));
+      window.scrollTo(0, 0);
     }, [dispatch])
 
 

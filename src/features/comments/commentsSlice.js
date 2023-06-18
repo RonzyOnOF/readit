@@ -8,9 +8,10 @@ export const fetchCommentsForPost = createAsyncThunk(
         const json = await response.json();
         if (json[1].data.children[0] === undefined) {
             console.log('no comments');
-            return;
+            return [];
         }
         const arrayOfPosts = json[1].data.children;
+        console.log(arrayOfPosts);
         return arrayOfPosts;
     }
 )

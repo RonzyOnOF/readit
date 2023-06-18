@@ -19,16 +19,16 @@ export const RootLayout = () => {
 
     return (
         <>
-            <div className={currentMode ? 'dark' : 'light'}>
-            <div className='header'>
-                <img src={logo} />
-                <h1>Readit</h1>
-                <div className='button-side'>
-                 <ToggleButton />
-                </div>
+        <div className={currentMode ? 'dark' : 'light'}>
+        <div className='header'>
+            <img src={logo} />
+            <h1>Readit</h1>
+            <div className='button-side'>
+            <ToggleButton />
             </div>
-            <Outlet /> 
-            </div>
+        </div>
+        <Outlet /> 
+        </div>
         </>
     )
 }
