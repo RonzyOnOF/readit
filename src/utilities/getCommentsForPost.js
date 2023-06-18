@@ -8,6 +8,6 @@ export const getCommentsForPosts = async (permalink) => {
         console.log('no comments');
         return;
     }
-    console.log(json[1].data.children[0].data);
-    return json[1].data.children[0].data;
+    console.log(json[1].data.children);
+    return json[1].data.children;
 }

@@ -53,13 +53,6 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
         )
     }
 
-    //get comments for post
-    const handleClick = (post) => {
-        const { permalink } = post.data;
-        console.log(permalink)
-        // getCommentsForPosts("/r/Animemes/comments/148qblp/for_real_im_confused/");
-    }
-
     return (
         <>
             <div className={isIndividualPost ? style.singlePost : style.post} onClick={clickPost}>
