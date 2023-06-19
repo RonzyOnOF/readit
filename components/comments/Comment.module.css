@@ -5,5 +5,25 @@
     margin: 10px auto;
     overflow-wrap: break-word;
     padding: 10px 20px;
-    background-color: rgb(139, 139, 139);
+    /* background-color: rgb(139, 139, 139); */
+    background-color: #494788;
 }
+
+@media screen and (max-width: 840px) {
+    .commentContainer {
+        max-width: 88%;
+        border-radius: 6px;
+        padding: 16px 26px;
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .commentContainer {
+        max-width: 88%;
+        border-radius: 6px;
+        padding: 14px 24px;
+        font-size: 2.8vw;
+    }
+}
+

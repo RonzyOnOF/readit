@@ -11,7 +11,7 @@
     padding: 10px 0px;
     margin: 15px auto;
     /* background-color: rgb(103, 164, 255); */
-    background-color: rgb(252, 173, 128);
+    background-color: #6b82ac;
     color: rgb(38, 4, 43);
     cursor: pointer;
     height: 100px;
@@ -25,7 +25,7 @@
 .subredditContainer::before {
 	content: "";
 	position: absolute;
-	background-color: rgba(80, 78, 76, 0.1);
+	background-color: rgba(42, 83, 122, 0.1);
 	width: 10%;
 	height: 25%;
 	border-radius: 50%;

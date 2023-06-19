@@ -3,10 +3,7 @@
     text-align: center;
     max-width: 100%;
     margin: 10px auto;
-    /* background-color: rgb(103, 164, 255); */
-    /* background-color: rgb(230, 193, 176); */
-    background-color: rgb(252, 173, 128);
-
+    background-color: #6b82ac;
     cursor: pointer;
 }
 
@@ -16,14 +13,14 @@
     max-width: 38%;
     margin: 10px auto;
     /* background-color: rgb(103, 164, 255); */
-    background-color: rgb(252, 173, 128);
+    background-color: #6b82ac;
     cursor: pointer;
 }
 
 .singlePost p {
     padding: 6px 8px;
     margin: auto;
-    max-width: 75%;
+    max-width: 80%;
     font-size: 1.2vw;
     overflow-wrap: break-word;
 }
@@ -82,6 +79,7 @@
 
 #author {
     font-weight: 300;
+    font-size: 15px;
 }
 
 .post img {
@@ -144,15 +142,28 @@
         font-size: 2.5vw;
         width: 90%;
     }
+
+    .singlePost {
+        max-width: 70%;
+    }
+
+    .singlePost p {
+        padding: 6px 10px;
+        margin: auto;
+        width: 60%;
+        font-size: 2.5vw;
+        width: 90%;
+    }
+
     
-      #votecount {
+    #votecount {
         width: 100%;
         font-size: 11px;
         margin: -10px auto -14px;
     }
 
     .footerContainer p {
-        font-size: 1.5vw;
+        font-size: 1vw;
     }
 
     #comment {
@@ -161,8 +172,9 @@
     }
 
     #author {
-        font-size: 2vw;
+        font-size: 1.4vw;
     }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -170,7 +182,7 @@
         width: 90%;
     }
     
-      .post p {
+    .post p {
         padding: 6px 10px;
         margin: auto;
         width: 60%;
