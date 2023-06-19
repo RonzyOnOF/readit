@@ -11,23 +11,22 @@ html {
   box-sizing: inherit;
 }
 
+
 body {
   font-family: 'Poppins';
   font-weight: 500;
-  background-color: rgb(236, 234, 234);
-  /* height: 100vh; */
 }
+
 
 .light {
   background-color: white;
-  height: 100%
+  min-height: 100vh;
 }
 
-.dark {
-  background-color: black;
-  color: white;
-  height: 100%
 
+.dark {
+  background-color: #010020;
+  min-height: 100vh;
 }
 
 
@@ -89,10 +88,15 @@ body {
   max-width: 90%;
   text-align: center;
   height: auto;
+  
 }
 
 .topic-container p {
   padding-bottom: 10px;
+}
+
+#subreddit-title-dark{
+  color: white
 }
 
 .comments-container {

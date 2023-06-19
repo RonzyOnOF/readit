@@ -5,9 +5,10 @@ import jdmlogo from '../../images/jdmwing.png';
 import peep from '../../images/peepingg.png';
 import gallery from '../../images/gallery.png';
 import pcmr from '../../images/pcmr.png';
+import gym from '../../images/gymmotivation.png';
 
 
-const subredditsArray = [{topic: 'onlyJDM', image: jdmlogo, id: v4()}, {topic: 'Animemes', image: peep, id: v4()}, {topic: 'GymMotivation', image: reactLog, id: v4()}, {topic: 'pics', image: gallery, id: v4()}, {topic: 'react', image: reactLog, id: v4()}, {topic: 'pcmasterrace', image: pcmr, id: v4()}]
+const subredditsArray = [{topic: 'onlyJDM', image: jdmlogo, id: v4()}, {topic: 'Animemes', image: peep, id: v4()}, {topic: 'GymMotivation', image: gym, id: v4()}, {topic: 'pics', image: gallery, id: v4()}, {topic: 'react', image: reactLog, id: v4()}, {topic: 'pcmasterrace', image: pcmr, id: v4()}]
 
 
 //middlethunk to fetch subreddit that returns array of posts

@@ -14,20 +14,19 @@ export const RootLayout = () => {
     // useEffect(() => {
     //     dispatch(loadSubreddit());
     // }, [dispatch])
-
-
+    
 
     return (
         <>
         <div className={currentMode ? 'dark' : 'light'}>
-        <div className='header'>
-            <img src={logo} />
-            <h1>Readit</h1>
-            <div className='button-side'>
-            <ToggleButton />
+            <div className='header'>
+                <img src={logo} />
+                <h1>Readit</h1>
+                <div className='button-side'>
+                <ToggleButton />
+                </div>
             </div>
-        </div>
-        <Outlet /> 
+            <Outlet /> 
         </div>
         </>
     )

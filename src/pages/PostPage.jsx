@@ -14,7 +14,9 @@ export const PostPage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
     const feed = useSelector(selectSubredditFeed);
+    
     const singlePost = feed.filter(post => post.data.id === id);
+
     
     useEffect(() => {
       dispatch(fetchCommentsForPost(singlePost[0].data.permalink));

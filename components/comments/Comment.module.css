@@ -1,9 +1,9 @@
 
 .commentContainer {
-    border: 2px solid black;
     border-radius: 4px;
     width: 100%;
     margin: 10px auto;
     overflow-wrap: break-word;
     padding: 10px 20px;
+    background-color: rgb(139, 139, 139);
 }

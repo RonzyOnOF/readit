@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
-import { selectComments, selectIsLoading, selectFailedToLoad } from '../comments/commentsSlice';
+import { selectComments, selectIsCommentLoading, selectFailedToLoad } from '../comments/commentsSlice';
 import { Loading } from '../../../components/loading/Loading';
 import { Comment } from '../../../components/comments/Comment';
 
 
 export const Comments = () => {
     const comments = useSelector(selectComments);
-    const isLoading = useSelector(selectIsLoading);
+    const isLoading = useSelector(selectIsCommentLoading);
     const failedToLoad = useSelector(selectFailedToLoad);
 
     return (
