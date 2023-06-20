@@ -1,7 +1,7 @@
 .buttonContainer {
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin: -10px 0px 20px 0px;
 }
 
 #goBack {
@@ -46,4 +46,11 @@
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
+}
+
+@media screen and (max-width: 800px) {
+	#goBack {
+		padding: 8px 13px;
+		font-size: 12px;
+	}
 }
