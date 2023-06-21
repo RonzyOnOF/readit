@@ -8,6 +8,8 @@ import pcmr from '../../images/pcmr.png';
 import gym from '../../images/gymmotivation.png';
 
 
+
+
 const subredditsArray = [{topic: 'onlyJDM', image: jdmlogo, id: v4()}, {topic: 'Animemes', image: peep, id: v4()}, {topic: 'GymMotivation', image: gym, id: v4()}, {topic: 'pics', image: gallery, id: v4()}, {topic: 'react', image: reactLog, id: v4()}, {topic: 'PCBuild', image: pcmr, id: v4()}]
 
 

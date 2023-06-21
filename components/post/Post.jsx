@@ -10,7 +10,6 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
 
     const [isVideo, setIsVideo] = useState(false);
     const [videoUrl, setVideoUrl] = useState('');
-    const [isNotVideoAndSelf , setIsNotVideoAndSelf] = useState(false);
 
     useEffect(() => {
         //check if type of post is a video
@@ -41,7 +40,7 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
 
 
     //check to see if media contains no image
-    if (thumbnail === 'self') {
+    if (thumbnail === 'self' || post.data.is_self === true) {
         return (
             <div className={isIndividualPost ? style.singlePost : style.post} onClick={clickPost}>
                 <p>{description}</p>
@@ -72,7 +71,7 @@ export const Post = ({ image, description, type, gallery, votes, clickPost, thum
                 <div className={isIndividualPost ? style.singleFooterContainer : style.footerContainer}>
                     <div className={style.upvotes}>
                         <img src={arrow} id={style.upvote} />
-                        <p id='votecount'>{votes}</p>
+                        <p id={style.votecount}>{votes}</p>
                         <img src={downArrow} id={style.downvote} />
                     </div>
                     <div className={style.commentContainer}>
